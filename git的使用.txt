@@ -11,8 +11,10 @@ git 配置全局用户信息
 3. 进入对应项目目录，执行 git init 在目录下生成隐藏的.git文件夹
 4. 执行 git remote add origin git@github.com:Sun23/learn.git 将本地与远程库关联（origin 是远程库的名字可以修改、后面地址为自己的github地址）
 5. 将本地库的所有内容推送到远程库中 git push -u origin master （第一次推送master分支所有内容，之后就可以用git push origin master推送最新）
-   详解：把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
-         由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+   详解：1.把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
+        
+        由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master
+        分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
 
 
 从零开发：先创建远程库，然后从远程库克隆
