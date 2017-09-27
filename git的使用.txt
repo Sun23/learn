@@ -1,0 +1,42 @@
+git 配置全局用户信息
+
+ 1  git config --global user.name "liar1"
+
+ 2  git config --global user.email "sunhaibao23@126.com"
+
+添加远程库 （先有本地库，后有远程库的时候，如何关联远程库）
+
+1. 创建SSH Key ssh-keygen -t rsa -C "youremail@example.com" 在用户目录下生成.ssh目录（id_rsa.pub是公钥、id_rsa是私钥）
+2. 将id_rsa.pub内容添加到github仓库中  进入仓库-->>setting-->>Deploy keys (在对应项目中添加、也可以在全局中设置 用户设置 SSH and GPG keys) 
+3. 进入对应项目目录，执行 git init 在目录下生成隐藏的.git文件夹
+4. 执行 git remote add origin git@github.com:Sun23/learn.git 将本地与远程库关联（origin 是远程库的名字可以修改、后面地址为自己的github地址）
+5. 将本地库的所有内容推送到远程库中 git push -u origin master （第一次推送master分支所有内容，之后就可以用git push origin master推送最新）
+   详解：把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
+         由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+
+
+从零开发：先创建远程库，然后从远程库克隆
+
+1. 创建SSH Key ssh-keygen -t rsa -C "youremail@example.com" 在用户目录下生成.ssh目录（id_rsa.pub是公钥、id_rsa是私钥）
+2. 将id_rsa.pub内容添加到github仓库中  进入仓库-->>setting-->>Deploy keys (在对应项目中添加、也可以在全局中设置 用户设置 SSH and GPG keys)
+3. 进入特定目录下，执行git clone git@github.com:Sun23/learn.git 项目克隆到本地
+
+
+关于出现ssh警告：
+
+当你第一次使用Git的clone或者push命令连接GitHub时，会得到一个警告：
+
+The authenticity of host 'github.com (xx.xx.xx.xx)' can't be established.
+RSA key fingerprint is xx.xx.xx.xx.xx.
+Are you sure you want to continue connecting (yes/no)?
+这是因为Git使用SSH连接，而SSH连接在第一次验证GitHub服务器的Key时，需要你确认GitHub的Key的指纹信息是否真的来自GitHub的服务器，输入yes回车即可。
+
+Git会输出一个警告，告诉你已经把GitHub的Key添加到本机的一个信任列表里了：
+
+Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
+这个警告只会出现一次，后面的操作就不会有任何警告了。
+
+如果你实在担心有人冒充GitHub服务器，输入yes前可以对照GitHub的RSA Key的指纹信息是否与SSH连接给出的一致。
+
+
+之后可以结合vscode可以快捷的使用git 
