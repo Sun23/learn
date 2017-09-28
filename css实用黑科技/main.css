@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+/* 利用 CSS 的 content 属性 attr 抓取资料 */
+.div1 {
+    width: 100px;
+    height: 30px;
+    background-color: #0ff;
+    position: relative;
+}
+
+.div1:hover:after {
+    content: attr(data-msg);
+    position: absolute;
+    top: 30px;
+    font-size: 12px;
+    width: 200%;
+    line-height: 30px;
+    left: 0;
+    border: 1px solid green;
+    text-align: center;
+}
+
+a[href^="tel"]:empty::before {
+    content: attr(href);
+}
+
+/* 利用用 :valid 和 :invalid 来做表单即时校验 */
+.form-group {
+    width: 32rem;
+    padding: 1rem;
+    border: 1px solid transparent;
+}
+
+.form-group:hover {
+    border-color: #eee;
+    transition: border 0.2s;
+}
+
+.form-group label {
+    display: block;
+    font-weight: normal;
+}
+
+.form-group input,
+.form-group textarea {
+    display: block;
+    width: 100%;
+    line-height: 2rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.form-group input:valid,
+.form-group textarea:valid {
+    border-color: #429032;
+    box-shadow: inset 5px 0 0 #429032;
+}
+
+.form-group input:invalid,
+.form-group textarea:invalid {
+    border-color: #d61d1d;
+    box-shadow: inset 5px 0 0 #d61d1d;
+}
+
+/* nth-of-type 某个范围内的子元素 只算p标签*/
+.div2 p:nth-of-type(2n) {
+    background-color: #333;
+}
+
+/* nth-child 所有子元素*/
+.div3 {
+    margin-top: 24px;
+}
+
+.div3 p:nth-child(2n) {
+    background-color: #333;
+}
+
+/* 竖版样式 */
+.verticle-mode {
+    writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+}
+
+/* 鼠标移入显示下拉列表 */
+.bd {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1s ease-out;
+}
+
+li:hover .bd {
+    max-height: 600px;
+    transition-timing-function: ease-in;
+}
+
+/* 文字左右对齐  兼容性极差*/ 
+.div5 p {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    text-align-last: justify;
+    -moz-text-align-last: justify;
+    -ms-text-align-last: justify;
+}
+
+/* 解决ios除body滚动不流畅问题 */
+.body {
+    -webkit-overflow-scrolling: touch; /* ios5+ */
+}
+/* 此属性可以继承 在body写即可 */
+
+
+/* 修改radio和checkbox默认样式 */
+.radio-beauty-container {
+    font-size: 0;
+    /* %是占位符 只有extend方法才会调用 单独使用不会编译到css中 */
+    /* %common {
+        padding: 2px;
+        background-color: green;
+        background-clip: content-box;
+    } */
+}
+
+.radio-beauty-container .radio-name {
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.radio-beauty-container .radio-beauty {
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+    display: inline-block;
+    border: 1px solid green;
+    vertical-align: middle;
+    margin: 0 15px 0 3px;
+    border-radius: 50%;
+}
+
+.radio-beauty-container .radio-beauty:hover {
+    box-shadow: 0 0 7px green;
+    padding: 2px;
+    background-color: green;
+    background-clip: content-box;
+}
+
+.radio-beauty-container input[type="radio"]:checked+.radio-beauty {
+    padding: 2px;
+    background-color: green;
+    background-clip: content-box;
+}
+
+/* 波浪线 */
+.div6 p {
+    position: relative;
+    width: 150px;
+    text-align: center;
+}
+
+.div6 p::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(135deg, transparent, transparent 45%, red, transparent 55%, transparent 100%),
+                linear-gradient(45deg, transparent, transparent 45%, red, transparent 55%, transparent 100%);
+    background-size: 6px 6px;
+}
