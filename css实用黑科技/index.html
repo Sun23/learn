@@ -104,6 +104,33 @@
         <div class="div6">
             <p>这个是波浪线哟</p>
         </div>
+
+        <!-- contenteditable 兼容性还不错 -->
+        <div class="div7" contenteditable="true">
+            这段文本可以实时编辑，但不是input标签
+        </div>
+        <!-- 小效果展示 -->
+        <div class="div8">
+            <style style="display:block" contentEditable>
+                body { color: blue }
+            </style>
+        </div>
+
+        <!-- 蚂蚁线 -->
+        <div class="antLine">
+            注意看边宽线
+        </div>
+
+        
     </div>
+
+    <script>
+        // 阻止鼠标右击事件 
+        document.oncontextmenu = function(e) {
+            return false;
+        }
+
+        // 对应元素.oncontextmenu = function(e) { return false; } 
+    </script>
 </body>
 </html>

@@ -52,7 +52,7 @@ img.onload = function() {
         // xhr.open("POST", '', true);
         // xhr.send(blob);    
 
-        console.log(blob);
+        // console.log(blob);
     }, file.type || 'image/png');
 } 
 
