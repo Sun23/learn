@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=viewport content="width=device-width, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- ios - 隐藏 safari 上下的条-->
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <!-- ios - 状态栏颜色，必须同时指定 apple-mobile-web-app-capable -->
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <title>成为代理人</title>
+    <link rel="stylesheet" href="assets/framework7/css/framework7.ios.css">
+    <link rel="stylesheet" href="assets/framework7/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="assets/framework7-icons/css/framework7-icons.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="assets/framework7/js/framework7.min.js"></script>
+    <script src="assets/resize/resize.min.js"></script>
+    <script src="assets/resize/megapix-image.js"></script>
+</head>
+<body>
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-through">
+                <div data-page="" class="page">
+                    <div class="navbar my-navbar">
+                        <div class="navbar-inner webview-navbar-inner">    
+                            <div class="left"></div> 
+                            <div class="center sliding" style="font-weight: normal;">人保财险代理人考试</div>
+                            <div class="right"></div> 
+                        </div>
+                        <div class="navbar-inner index-navbar-inner" style="display:none;">
+                            <div class="left index-exit"><i class="f7-icons">left</i></div>
+                            <div class="center sliding" style="font-weight: normal;">人保财险代理人考试</div>
+                            <div class="right index-share"><img src="img/share2.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="banner">
+                            <img src="img/home2.png" alt="">
+                        </div>
+                        <!-- 信息列表 -->
+                        <div class="list-block my-list-block">
+                            <ul class="user-info-list">
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">姓名</div>
+                                        <div class="item-input">
+                                            <input type="text"  placeholder="请输入" id="user-name">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">身份证号码</div>
+                                        <div class="item-input">
+                                            <input type="text"  placeholder="请输入" id="id-card" maxlength="21">
+                                        </div>
+                                        <div class="item-after ocr-btn" style="display:none;">
+                                            <img src="img/ocr.png" alt="">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">手机号</div>
+                                        <div class="item-input">
+                                            <input type="text"  placeholder="请输入" id="user-tel" maxlength="13">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content row my-item-content">
+                                    <div class="item-inner">
+                                        <div class="col-50">
+                                            <div class="id-card">
+                                                <p class="card-title">添加身份证正面</p>
+                                                <input type="file" name="" id="card-z" accept="image/*" class="upload-img">
+                                                <canvas class="img-box" id="card-z-box"></canvas>
+                                            </div>      
+                                        </div>
+                                        <div class="col-50">
+                                            <div class="id-card">
+                                                <p class="card-title">添加身份证反面</p>
+                                                <input type="file" name="" id="card-f" accept="image/*" class="upload-img">
+                                                <canvas class="img-box" id="card-f-box"></canvas>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">推荐人姓名</div>
+                                        <div class="item-input">
+                                            <input type="text"  placeholder="请输入" id="referrer-name">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">推荐人联系电话</div>
+                                        <div class="item-input">
+                                            <input type="text"  placeholder="请输入" id="referrer-tel" maxlength="11">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 按钮 -->
+                        <div class="btn-box list-block wx-btn-box">
+                            <input type="button" name="" id="submit-btn" value="考试">
+                        </div>
+                        <!-- app内的按钮 -->
+                        <div class="btn-box list-block row index-btn-box" style="display:none;">
+                            <div class="col-50">
+                                <input type="button" name="" value="考试" class="exam-btn">
+                            </div>
+                            <div class="col-50">
+                                <input type="button" name="" value="分享" class="share-btn"> 
+                            </div>
+                        </div>
+                        <p class="exam-rule">考试时间为30分钟，单选20题，每题5分</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mask hidden">
+        <div>
+            <span class="mask-title">上传中</span><br>
+            <span style="width:42px; height:42px;" class="preloader preloader-white"></span>
+        </div>    
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+/* 导航样式重写 */
+.my-navbar {
+    background-color: #f5f5f5 !important;
+}
+
+.my-navbar .navbar-inner {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.my-navbar .navbar-inner i {
+    font-size: 23px;
+}
+
+.banner {
+    position: relative;
+}
+
+.banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.my-list-block {
+    margin: 0;
+    font-size: 15px;
+}
+
+.my-list-block .item-content input {
+    font-size: 14px;
+}
+
+.user-info-list input {
+    text-align: right;
+}
+
+.my-item-content {
+    padding: 6px 0 0 0;
+}
+
+.id-card {
+    width: 100%;
+    padding-bottom: 75%;
+    margin: 0 auto;
+    border: 1px dashed #777;
+    border-radius: 6px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    background: url('../img/add.png') center center no-repeat;
+    background-size: 50% 50%;
+}
+
+.card-title {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+}
+
+.id-card > .upload-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.id-card .img-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.btn-box {
+    margin-bottom: 12px;
+}
+
+#submit-btn {
+    display: block;
+    width: 40%;
+    border: 1px solid #333;
+    outline: none;
+    background-color: #fff;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 6px;
+    margin: 0 auto;
+}
+
+.exam-rule {
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+}
+
+.index-btn-box .exam-btn,
+.index-btn-box .share-btn {
+    display: block;
+    width: 60%;
+    border: 1px solid #333;
+    outline: none;
+    background-color: #fff;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 6px;
+    margin: 0 auto;
+}
+
+.ocr-btn img {
+    display: block;
+    height: 28px;
+    width: auto;
+}
+
+/* 考试中 */
+.my-page-content {
+    overflow: hidden;
+}
+
+.exam-title {
+    height: 32px;
+    line-height: 32px;
+    padding: 0 15px;
+}
+
+.exam-title > div:nth-child(2) {
+    text-align: right;
+}
+
+.exam-content {
+    position: absolute;
+    top: 76px;
+    width: 100%;
+    bottom: 36px;
+    background: #fff;
+}
+
+.exam-footer {
+    border-top: 1px solid #fafafa;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 36px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.exam-footer .pre-test,
+.exam-footer .next-test,
+.exam-footer .over-time {
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+}
+
+.submit-btn {
+    font-size: 14px;
+    line-height: 36px;
+}
+
+.submit-btn i {
+    font-size: 12px;
+}
+
+.pre-test i,
+.next-test i {
+    font-size: 12px;
+}
+
+.over-time i {
+    font-size: 22px;
+    position: relative;
+    top: 3px;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: static;
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+    z-index: 0;
+    cursor: pointer;
+    -moz-background-size: 27px 44px;
+    -webkit-background-size: 27px 44px;
+    background-size: 27px 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: none;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+    opacity: 1;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.exam-list-block {
+    padding: 0 15px;
+}
+
+.exam-list-block ul:before,
+.exam-list-block ul:after {
+    background-color: #fff;
+}
+
+.exam-question {
+    padding: 0 0 12px 0;
+    font-size: 16px;
+}
+
+.answer {
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.answer label {
+    padding-left: 6px;
+}
+
+/* 完成考试 */
+.banner-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.banner-title {
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.banner-title p {
+    text-align: center;
+}
+
+.banner-title p:first-child {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.banner-title p:last-child {
+    margin-top: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.exam-result {
+    padding: 15px 15px 30px 15px;
+}
+
+.back-home {
+    display: block;
+    width: 40%;
+    height: 32px;
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #777;
+    color: #333;
+    text-align: center;
+    line-height: 32px;
+    margin: 0 auto;
+    margin-top: 12px;
+}
+
+.index-share img {
+    display: block;
+    width: 23px;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+    -webkit-appearance: none;
+}
+
+.index-exit,.index-share,.exit-btn {
+    height: 100%;    
+}
+
+.index-exit,.exit-btn {
+    padding-right: 16px;
+}
+
+/* 弹出提示层 */
+.mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 10000;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.mask-title {
+    color: #fff;
+    font-size: 16px;
+    padding-bottom: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 单选按钮样式 */
+.exam-content input[type='radio'] {
+    position: relative;
+    top: 2px;
+}
