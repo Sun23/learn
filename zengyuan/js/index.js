@@ -56,21 +56,23 @@ $$('.upload-img').on('change', function() {
     }
     var this_id = $$(this).attr('id');
     $$('.mask').removeClass('hidden');
+
     canvasResize(this.files[0], {
-        crop: false,
-        quality: 0.1,
-        rotate: 0,
+        crop: false, // 是否剪裁
+        quality: 0.1, // 图片质量
+        rotate: 0, // 旋转角度 
         callback: function(baseStr) {
             var canvas = document.getElementById(this_id + '-box');
             var ctx = canvas.getContext('2d');
             var img = new Image();
             img.src = baseStr;
             temp();
-            // 替代onload事件
+            // 替代onload事件（ios不支持onload）
             function temp() {
                 if(img.complete == true) {
                     var nw = img.naturalWidth, nh = img.naturalHeight;
                     ctx.drawImage(img, 0, 0, nw, nh, 0, 0, img.width, img.height);
+                    // 引入MegaPixImage.js 解决canvas绘制图片在ios无法正常显示 
                     var mpImg = new MegaPixImage(img);
                     mpImg.render(canvas, { width: img.width, height: img.height });
                     $$('.mask').addClass('hidden');
