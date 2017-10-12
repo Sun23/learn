@@ -1,0 +1,1 @@
+framework7 中a标签 可能被f7管理（阻止其默认行为） 需要加上class="external" 来不让f7管理该链接

@@ -1,0 +1,28 @@
+出现null的情况：
+
+1.自定义属性不存在时 eg:<p>balabala</p> getAttribute("data-p"); //null
+
+2.id 取html节点 但id不存在时 var s = document.getElementById("a"); // null
+
+
+
+
+null 的设计问题
+  console.log(null > 0);   // false
+  console.log(null < 0);   // false
+  console.log(null >= 0);   // true
+  console.log(null <= 0);   // true
+  console.log(null == 0);   // false
+  console.log(null === 0);    // false
+
+原因：
+
+1.关系运算符 和 相等运算符 并不是一个类别的.
+2.关系运算符,在设计上,总是需要运算元尝试转为一个number . 而相等运算符在设计上,则没有这方面的考虑.
+3.最重要的一点, 不要把 拿 a > b , a == b 的结果 想当然的去和 a >= b 建立联系. 正确的符合最初设计思想的关系
+是 a > b 与 a >= b是一组 . a == b 和其他相等运算符才是一组. 比如 a === b , a != b, a !== b .
+
+
+null > 0   // null 尝试转型为number , 则为0 . 所以结果为 false, 
+null >= 0  // null 尝试转为number ,则为0 , 结果为 true. 
+null == 0  // null在设计上，在此处不尝试转型. 所以 结果为false. 

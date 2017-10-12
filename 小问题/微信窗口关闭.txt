@@ -1,0 +1,2 @@
+微信关闭窗口：
+	因为微信打开的是webview,原生的window.close()无效，微信可用WeixinJSBridge.call('closeWindow');实现窗口关闭
