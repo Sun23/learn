@@ -307,6 +307,81 @@ console.log(iterator.next()); // { value: 1, done: false }
 console.log(iterator.next()); // { value: 2, done: false }
 console.log(iterator.next()); // { value: 3, done: false }
 console.log(iterator.next()); // { value: undefined, done: true }, 
-                              // 此时 g4() 返回了 { value: "foo", done: true }
+                               // 此时 g4() 返回了 { value: "foo", done: true }
 
 console.log(result);          // "foo"
+
+// Proxy 对象用于定义基本操作的自定义行为（如属性查找，赋值，枚举，函数调用等）
+// 语法：new Proxy(target, handler)
+
+var propChecker = {
+    /**
+     * target: 目标对象
+     * property: 属性名
+     * value: 设置的值
+     * receiver: 
+     */
+    //  set(targe,property,value,receiver) 
+    set: function(target, property, value) {
+        if(property == 'price') {
+            if(typeof value == 'number') {
+                throw new TypeError("price is not number");
+            } else if(value <= 0) {
+                throw new RangeError("price must be greater than zero");
+            }
+        } else if(property != 'name') {
+            throw new ReferenceError('property ' + property + ' not valid');
+        } else {
+            target[property] = value;
+        }
+    }
+}
+
+try {
+    var item = new Proxy({}, propChecker);
+    item.name = 'apple';
+    item.type = 'red delicious';
+    item.price = 'three';
+} catch(e) {
+    console.log(e);
+}
+
+// 无操作代理转发  p的操作转发到target上
+let target = {};
+let p = new Proxy(target, {});
+
+p.a = 37;   // 操作转发到目标
+
+console.log(target.a);    // 37. 操作已经被正确地转发
+
+
+// 创建类
+class Book {
+    constructor(title, author, pubdate) {
+        this.title = title;
+        this.author = author;
+        this.pubdate = pubdate;
+    }
+    getBook() {
+        return this.title + "__" + this.author + "__" + this.pubdate;
+    }
+}
+
+// 继承
+class TypeBook extends Book {
+    constructor(title, author, pubdate, type) {
+        super(title, author, pubdate);
+        this.type = type;
+    }
+    getBook() {
+        return super.getBook() + "--category" + this.type;
+    }
+    getType() {
+        return this.type;
+    }
+}
+
+var bookA = new TypeBook('sunBook', 'sun', '2013-10-13', 'tech');
+console.log(bookA.getBook()); // sunBook__sun__2013-10-13--categorytech
+
+

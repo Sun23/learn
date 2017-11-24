@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>promise</title>
+</head>
+<body>
+    <script>
+        // promise 异步处理 (与ajax共用)
+        var  test = new Promise(function(resolve, reject) {
+            var req = new XMLHttpRequest();
+            req.open('GET', 'https://api.github.com/repos/vmg/redcarpet/issues?state=closed', true);
+            // 注意： 此处是onload (promise和http请求一起使用 只需检查状态为200 http响应发给解析函数 其他内容会被promisej拒绝 )
+            req.onload = function() {
+                if(req.status == 200) {
+                    resolve(req.responseText);
+                } else {
+                    reject(req.readyText);
+                }
+            }
+            req.onerror = function() {
+                reject('error')
+            }
+            req.send();
+        })
+
+        test.then(function(response) {
+            console.log('response' + response)
+        },function(error) {
+            console.log('error' + error)
+        })    
+    </script>
+</body>
+</html>
