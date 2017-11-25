@@ -7,3 +7,5 @@ Number 高级数学和统计
 Moment.js 日期拓展方法
 
 Keypress 处理键盘事件
+
+表单验证 validator
