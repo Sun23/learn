@@ -24,7 +24,7 @@
         // 处于激活状态的历史记录条目是由history.pushState()方法创建,或者由history.replaceState()方法修改过的, 则popstate事件对象的state属性包含了这个历史记录条目的state对象的一个拷贝
         window.onpopstate = function (event) {
             // 检查event.state 如果找到了重新加载
-            console.log(event.state);
+            // console.log(event.state);
             if (!event.state) return
             var page = event.state.page;
             switch (page) {
