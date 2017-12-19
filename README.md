@@ -1,6 +1,3 @@
-"#learn" 
-2017-9-27 clone一份
+## 其他
+[markDown语法大全](https://github.com/bailicangdu/blog/issues/2)
 
-2017-10-9 添加css分割方式
-
-2017-10-10 meta标签
