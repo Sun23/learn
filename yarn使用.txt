@@ -1,4 +1,4 @@
-常用的方法：
+##常用的方法：
 yarn add: 为当前包添加一个依赖包。
 yarn init: 初始化一个包。
 yarn install: 依照 package.json 文件列出的依赖安装所有依赖包。
