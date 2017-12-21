@@ -1,5 +1,5 @@
 
-##    常用的方法：
+# 常用的方法：
 
 yarn add: 为当前包添加一个依赖包。
 yarn init: 初始化一个包。
@@ -11,6 +11,9 @@ yarn remove: 从当前项目删除一个无用的依赖包。
 
 1.yarn add [package-name] 本地项目安装模块
   yarn global add [package-name] 全局安装模块
+  yarn add [package] --dev 添加到devDependencies
+  yarn add [package] --peer  添加到 peerDependencies 
+  yarn add [package] --optional 添加到 optionalDependencies
 
     你可以用以下任何方法指定版本号：
         yarn add package-name 命令用来安装包的 “最新（latest）” 版本。
@@ -35,4 +38,9 @@ yarn remove: 从当前项目删除一个无用的依赖包。
     }
   yarn run dev 
   如果直接yarn run 则按列表顺序执行
+  yarn run start 可以直接yarn start  其他命令不可以需要写上run
 
+7. 更新包
+  yarn upgrade [package]
+  yarn upgrade [package]@[version]
+  yarn upgrade [package]@[tag]
