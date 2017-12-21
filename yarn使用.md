@@ -29,18 +29,19 @@
 
 #### yarn remove [package] 删除包 同时更新package.json 和 yarn.lock
 
-#### yarn run
-    
-    yarn run [名字] 在package.json 中配置script对象如：
-      "scripts": {
-        "dev": "node build/dev-server.js",
-        "start": "npm run dev",
-        "build": "node build/build.js",
-        "lint": "eslint --ext .js,.vue src"
-      }
-    yarn run dev 
-    如果直接yarn run 则按列表顺序执行
-    yarn run start 可以直接yarn start  其他命令不可以需要写上run
+#### yarn run [name]
+
+        yarn run [名字] 在package.json 中配置script对象如：
+          "scripts": {
+            "dev": "node build/dev-server.js",
+            "start": "npm run dev",
+            "build": "node build/build.js",
+            "lint": "eslint --ext .js,.vue src"
+          }
+
+        yarn run dev 
+        如果直接yarn run 则按列表顺序执行
+        yarn run start 可以直接yarn start  其他命令不可以需要写上run
 
 #### 更新包
 
