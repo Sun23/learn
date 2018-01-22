@@ -1,3 +1,3 @@
-GitHub Token: cffe1834e219e85698fdc213097e8acb1fbd7c22
-GitHub Gist: e63e28efc1f9570563400cbbc54dc327
-GitHub Gist Type: Secret
+- GitHub Token: cffe1834e219e85698fdc213097e8acb1fbd7c22
+- GitHub Gist: e63e28efc1f9570563400cbbc54dc327
+- GitHub Gist Type: Secret
