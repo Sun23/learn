@@ -1,5 +1,3 @@
-## id: e63e28efc1f9570563400cbbc54dc327
-
-
-## Personal access tokens
-  1f724a23680f76f89efdcd8534b5a881a0ef405b
+GitHub Token: cffe1834e219e85698fdc213097e8acb1fbd7c22
+GitHub Gist: e63e28efc1f9570563400cbbc54dc327
+GitHub Gist Type: Secret
